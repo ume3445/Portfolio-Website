@@ -7,8 +7,7 @@ Hosted using **GitHub Pages** and connected to a custom domain via **Squarespace
 
 ## 🌐 Live Site
 
-➡️ [https://ume3445.github.io/Portfolio-Website](https://ume3445.github.io/Portfolio-Website)  
-➡️ [www.umerhammad.com](https://www.umerhammad.com) *(if custom domain is set)*
+➡️ [www.umerhammad.com](https://www.umerhammad.com)
 
 ## 📂 Features
 
