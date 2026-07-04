@@ -61,23 +61,23 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        <h2 class="text-white mb-4">I build things. I break things. I figure out why.</h2>
         <p class="text-white-50">
-          I'm Umer — a CS sophomore at DePauw University. I'm interested in software engineering, data science, and whatever problem is in front of me.
+          I'm Umer, a rising junior studying Computer Science and Math at DePauw University. Most of college so far has been about learning to build things that actually work, not just things that look good in a demo.
+        </p>
+        <p class="text-white-50">
+          I've taught coding to over 100 students across two different programs and co-founded an NGO that runs food drives and works with orphanages. Outside of code I care way too much about mechanical keyboards, read a lot of fiction, go on long runs, and type fast enough that it's become a personality trait at this point. Feel free to reach out, I like talking to people about what they're building.
         </p>
         <div class="social justify-content-center">
           <span>
             <a class="btn btn-primary" href="assets/docs/Muhammad Umer Hammad Resume.pdf" target="_blank">Download My Resume 📎</a>
           </span>
           <span class="abtcontainer">
-            <a class="mx-2 btnsmall text-white-50" href="https://twitter.com"><i class="fab fa-twitter"></i></a>
             <a class="mx-2 btnsmall text-white-50" href="https://www.linkedin.com/in/umerhammad010/"><i class="fab fa-linkedin"></i></a>
             <a class="mx-2 btnsmall text-white-50" href="https://github.com/ume3445"><i class="fab fa-github"></i></a>
           </span>
         </div>
       </div>
     </div>
-    <img class="img-fluid" style="height: 160px;" alt="" />
   </div>
 </section>
 
@@ -87,35 +87,68 @@
     <h2 class="text-uppercase text-center mb-5">Portfolio</h2>
     <div class="row">
 
-      <div class="col-md-4 mb-4">
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 text-center project-card">
+          <div class="card-body d-flex flex-column">
+            <i class="fas fa-robot project-icon"></i>
+            <h5 class="card-title mt-3">RetrieveAI</h5>
+            <p class="card-text text-muted flex-grow-1">RAG pipeline built with LangGraph, OpenAI embeddings, and ChromaDB. Ingests PDFs and answers queries via function calling and a CLI interface.</p>
+            <a href="https://github.com/ume3445/RetrieveAI" class="btn btn-primary mt-auto" target="_blank">View Project</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 text-center project-card">
+          <div class="card-body d-flex flex-column">
+            <i class="fas fa-bell project-icon"></i>
+            <h5 class="card-title mt-3">AWS Push Notifications</h5>
+            <p class="card-text text-muted flex-grow-1">Full-stack Android push notification pipeline using AWS SNS, Lambda, and Firebase FCM for real-time delivery.</p>
+            <a href="https://github.com/ume3445/AWS-Push-Notifications" class="btn btn-primary mt-auto" target="_blank">View Project</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
         <div class="card h-100 text-center project-card">
           <div class="card-body d-flex flex-column">
             <i class="fas fa-globe project-icon"></i>
             <h5 class="card-title mt-3">MindFirst</h5>
-            <p class="card-text text-muted flex-grow-1">A suite of tools for using AI without losing the ability to think. Chrome extension, AI literacy quiz, and usage tracker.</p>
+            <p class="card-text text-muted flex-grow-1">Chrome extension and macOS menu bar app that classifies AI prompts, tracks usage, and includes an AI literacy quiz. Built with the Anthropic API.</p>
             <a href="https://mindfirst.netlify.app" class="btn btn-primary mt-auto" target="_blank">View Project</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-4 mb-4">
+      <div class="col-md-6 col-lg-4 mb-4">
         <div class="card h-100 text-center project-card">
           <div class="card-body d-flex flex-column">
             <i class="fas fa-chart-bar project-icon"></i>
             <h5 class="card-title mt-3">Telecom Churn Prediction</h5>
-            <p class="card-text text-muted flex-grow-1">Churn prediction pipeline with SHAP explainability, uplift modeling, survival analysis, and ROI simulation.</p>
+            <p class="card-text text-muted flex-grow-1">Interpretable churn prediction pipeline with SHAP explainability, uplift modeling, survival analysis, and ROI simulation.</p>
             <a href="https://github.com/ume3445/telecom-churn-prediction" class="btn btn-primary mt-auto" target="_blank">View Project</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-4 mb-4">
+      <div class="col-md-6 col-lg-4 mb-4">
         <div class="card h-100 text-center project-card">
           <div class="card-body d-flex flex-column">
-            <i class="fab fa-apple project-icon"></i>
-            <h5 class="card-title mt-3">Connect Four</h5>
-            <p class="card-text text-muted flex-grow-1">Two-player Connect Four for iPhone built with Swift and UIKit.</p>
-            <a href="https://github.com/ume3445/ios-connect-four" class="btn btn-primary mt-auto" target="_blank">View Project</a>
+            <i class="fas fa-coins project-icon"></i>
+            <h5 class="card-title mt-3">iOS Crypto Tracker</h5>
+            <p class="card-text text-muted flex-grow-1">Live cryptocurrency tracker for iOS using the CoinGecko API, built with Swift and UIKit.</p>
+            <a href="https://github.com/ume3445/iOS-Crypto-tracker" class="btn btn-primary mt-auto" target="_blank">View Project</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 text-center project-card">
+          <div class="card-body d-flex flex-column">
+            <i class="fas fa-chart-line project-icon"></i>
+            <h5 class="card-title mt-3">Occupational Choice Under Financial Frictions</h5>
+            <p class="card-text text-muted flex-grow-1">Computational economics research modeling self-employment decisions under credit constraints. Built in Julia.</p>
+            <a href="https://github.com/ume3445/self-employment-financial-development" class="btn btn-primary mt-auto" target="_blank">View Project</a>
           </div>
         </div>
       </div>
@@ -153,7 +186,6 @@
 <section class="contact-section bg-black">
   <div class="container">
     <div class="social d-flex justify-content-center">
-      <a class="mx-2 v-align" href="https://twitter.com"><i class="fab fa-twitter"></i></a>
       <a class="mx-2 v-align" href="https://www.linkedin.com/in/umerhammad010/"><i class="fab fa-linkedin"></i></a>
       <a class="mx-2 v-align" href="https://github.com/ume3445"><i class="fab fa-github"></i></a>
     </div>
