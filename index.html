@@ -24,6 +24,44 @@
     .about-section {
       padding-bottom: 50px;
     }
+
+    .headshot-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 340px;
+      height: 0;
+      margin: 0 auto;
+      padding-bottom: 125%;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid var(--primary);
+      background-color: #2b2b2b;
+    }
+
+    .headshot-wrap img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .headshot-fallback {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 3.5rem;
+      letter-spacing: 0.2rem;
+      color: rgba(255, 255, 255, 0.35);
+    }
   </style>
 </head>
 <body id="page-top">
@@ -57,17 +95,23 @@
 </header>
 
 <!-- About -->
-<section class="about-section text-center" id="about">
+<section class="about-section" id="about">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-5 col-lg-4 mb-5 mb-md-0">
+        <div class="headshot-wrap">
+          <span class="headshot-fallback">UH</span>
+          <img src="assets/img/profile/headshot.jpg" alt="Muhammad Umer Hammad" onerror="this.style.display='none';" />
+        </div>
+      </div>
+      <div class="col-12 col-md-7 col-lg-8 text-left">
         <p class="text-white-50">
           I'm Umer, a rising junior studying Computer Science and Math at DePauw University. Most of college so far has been about learning to build things that actually work, not just things that look good in a demo.
         </p>
         <p class="text-white-50">
           I've taught coding to over 100 students across two different programs and co-founded an NGO that runs food drives and works with orphanages. Outside of code I care way too much about mechanical keyboards, read a lot of fiction, go on long runs, and type fast enough that it's become a personality trait at this point. Feel free to reach out, I like talking to people about what they're building.
         </p>
-        <div class="social justify-content-center">
+        <div class="social">
           <span>
             <a class="btn btn-primary" href="assets/docs/Muhammad Umer Hammad Resume.pdf" target="_blank">Download My Resume 📎</a>
           </span>
@@ -125,7 +169,7 @@
           <div class="card-body d-flex flex-column">
             <i class="fas fa-chart-bar project-icon"></i>
             <h5 class="card-title mt-3">Telecom Churn Prediction</h5>
-            <p class="card-text text-muted flex-grow-1">Interpretable churn prediction pipeline with SHAP explainability, uplift modeling, survival analysis, and ROI simulation.</p>
+            <p class="card-text text-muted flex-grow-1">Churn prediction pipeline with SHAP explainability, survival analysis, and ROI simulation. Includes an uplift modeling demo built on simulated data.</p>
             <a href="https://github.com/ume3445/telecom-churn-prediction" class="btn btn-primary mt-auto" target="_blank">View Project</a>
           </div>
         </div>
