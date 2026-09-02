@@ -53,4 +53,46 @@
     navbarCollapse();
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
+
+    // Typewriter effect for the hero subtitle
+    var typewriterPhrases = [
+        "Software Engineer",
+        "Open Source Contributor",
+        "Machine Learning Researcher",
+        "Former Google Developers Club Tech Lead",
+        "iD Tech Lead SWE Instructor"
+    ];
+    var typewriterEl = document.getElementById("typewriter-text");
+    var typingSpeed = 70;
+    var deletingSpeed = 35;
+    var pauseAfterTyped = 1400;
+    var pauseAfterDeleted = 300;
+
+    function typewriterTick(phraseIndex, charIndex, deleting) {
+        var currentPhrase = typewriterPhrases[phraseIndex];
+
+        if (!deleting && charIndex === currentPhrase.length) {
+            setTimeout(function () {
+                typewriterTick(phraseIndex, charIndex, true);
+            }, pauseAfterTyped);
+            return;
+        }
+
+        if (deleting && charIndex === 0) {
+            setTimeout(function () {
+                typewriterTick((phraseIndex + 1) % typewriterPhrases.length, 0, false);
+            }, pauseAfterDeleted);
+            return;
+        }
+
+        var nextCharIndex = deleting ? charIndex - 1 : charIndex + 1;
+        typewriterEl.textContent = currentPhrase.substring(0, nextCharIndex);
+        setTimeout(function () {
+            typewriterTick(phraseIndex, nextCharIndex, deleting);
+        }, deleting ? deletingSpeed : typingSpeed);
+    }
+
+    if (typewriterEl) {
+        typewriterTick(0, 0, false);
+    }
 })(jQuery); // End of use strict

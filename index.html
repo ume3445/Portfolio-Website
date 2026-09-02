@@ -48,6 +48,17 @@
       object-fit: cover;
     }
 
+    .typewriter-cursor {
+      display: inline-block;
+      margin-left: 0.05em;
+      animation: typewriter-blink 1s steps(1) infinite;
+    }
+
+    @keyframes typewriter-blink {
+      0%, 50% { opacity: 1; }
+      50.01%, 100% { opacity: 0; }
+    }
+
     .headshot-fallback {
       position: absolute;
       top: 0;
@@ -76,6 +87,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Portfolio</a></li>
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
       </ul>
@@ -88,7 +100,7 @@
   <div class="container d-flex h-100 align-items-center">
     <div class="mx-auto text-center">
       <h1 class="mx-auto my-0 text-uppercase">Umer Hammad</h1>
-      <h2 class="text-white-50 mx-auto mt-2 mb-5">Software Engineer</h2>
+      <h2 class="text-white-50 mx-auto mt-2 mb-5"><span id="typewriter-text">Software Engineer</span><span class="typewriter-cursor">|</span></h2>
       <a class="btn btn-primary js-scroll-trigger" href="#projects">View My Portfolio</a>
     </div>
   </div>
@@ -120,6 +132,74 @@
             <a class="mx-2 btnsmall text-white-50" href="https://github.com/ume3445"><i class="fab fa-github"></i></a>
           </span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section class="experience-section bg-light" id="experience">
+  <div class="container">
+    <h2 class="text-uppercase text-center mb-5">Experience</h2>
+    <div class="row">
+      <div class="col-12 col-lg-10 mx-auto">
+
+        <div class="card project-card mb-4">
+          <div class="card-body">
+            <div class="text-center">
+              <i class="fas fa-code project-icon"></i>
+              <h5 class="card-title mt-3 mb-1">Software Engineer Intern</h5>
+              <p class="text-muted mb-3"><small>Code for the Community Inc. — Redwood City, CA (Remote)<br>Sept 2026 – Nov 2026</small></p>
+            </div>
+            <ul class="text-muted text-left pl-4 mb-0">
+              <li class="mb-2">Selected from a competitive pool for a 10-week software engineering cohort building a production application for a nonprofit partner</li>
+              <li>Collaborating with a cross-functional team and mentor in weekly Agile sprints to design, build, and ship the product</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card project-card mb-4">
+          <div class="card-body">
+            <div class="text-center">
+              <i class="fas fa-server project-icon"></i>
+              <h5 class="card-title mt-3 mb-1">Software Engineer Intern</h5>
+              <p class="text-muted mb-3"><small>Tenzer Technologies — Greencastle, IN<br>May 2026 – Aug 2026</small></p>
+            </div>
+            <ul class="text-muted text-left pl-4 mb-0">
+              <li class="mb-2">Cut data mismatches 15% by building 13 REST endpoints in Java/Spring Boot syncing account data across services</li>
+              <li>Reduced deployment time 19% by automating build and testing stages of the CI/CD pipeline across 3+ Agile Sprints</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card project-card mb-4">
+          <div class="card-body">
+            <div class="text-center">
+              <i class="fas fa-flask project-icon"></i>
+              <h5 class="card-title mt-3 mb-1">Undergraduate Research Assistant</h5>
+              <p class="text-muted mb-3"><small>DePauw University — Greencastle, IN<br>Jan 2026 – April 2026</small></p>
+            </div>
+            <ul class="text-muted text-left pl-4 mb-0">
+              <li class="mb-2">Achieved 0.85 ROC-AUC predicting customer churn across 7,043 records via ML pipeline with stratified 5-fold CV</li>
+              <li>Quantified $242k revenue-at-risk by applying SHAP to flag tenure, contract, and dependents as top churn drivers</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card project-card mb-4">
+          <div class="card-body">
+            <div class="text-center">
+              <i class="fas fa-chalkboard-teacher project-icon"></i>
+              <h5 class="card-title mt-3 mb-1">Lead SWE Instructor</h5>
+              <p class="text-muted mb-3"><small>iD Tech Camps — Cincinnati, OH &amp; San Mateo, CA<br>May 2025 – Aug 2025</small></p>
+            </div>
+            <ul class="text-muted text-left pl-4 mb-0">
+              <li class="mb-2">Earned 90+ rating teaching 140 students across 10+ workshops in Java, web development, and software design</li>
+              <li>Selected as 1 of 9 instructors out of 300+ nationwide to teach 35+ students at iD Tech's flagship camp at Roblox HQ</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
