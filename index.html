@@ -3,7 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Portfolio of Umer Hammad" />
+  <meta name="description" content="Umer Hammad, Computer Science student at DePauw University building backend, database, and AI tools. Seeking Summer 2027 software engineering internships." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://umerhammad.com/" />
+  <meta property="og:title" content="Umer Hammad | Software Engineer" />
+  <meta property="og:description" content="CS student at DePauw University building backend, database, and AI tools. Seeking Summer 2027 SWE internships." />
+  <meta property="og:image" content="https://umerhammad.com/assets/img/profile/headshot.jpg" />
   <meta name="author" content="Umer Hammad" />
   <title>Umer Hammad | Software Engineer</title>
 
@@ -57,6 +62,23 @@
     @keyframes typewriter-blink {
       0%, 50% { opacity: 1; }
       50.01%, 100% { opacity: 0; }
+    }
+
+    .about-section .social {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .about-section .abtcontainer {
+      margin-left: 0;
+    }
+
+    @media (max-width: 411px) {
+      .masthead {
+        padding: 7rem 0 4rem;
+      }
     }
 
     .headshot-fallback {
@@ -118,7 +140,7 @@
       </div>
       <div class="col-12 col-md-7 col-lg-8 text-left">
         <p class="text-white-50">
-          I'm Umer, a rising junior studying Computer Science and Math at DePauw University. Most of college so far has been about learning to build things that actually work, not just things that look good in a demo.
+          I'm Umer, a junior studying Computer Science with a minor in Mathematics at DePauw University. Most of college so far has been about learning to build things that actually work, not just things that look good in a demo.
         </p>
         <p class="text-white-50">
           I've taught coding to over 100 students across two different programs and co-founded an NGO that runs food drives and works with orphanages. Outside of code I care way too much about mechanical keyboards, read a lot of fiction, go on long runs, and type fast enough that it's become a personality trait at this point. Feel free to reach out, I like talking to people about what they're building.
@@ -149,11 +171,11 @@
             <div class="text-center">
               <i class="fas fa-code project-icon"></i>
               <h5 class="card-title mt-3 mb-1">Software Engineer Intern</h5>
-              <p class="text-muted mb-3"><small>Code for the Community Inc. — Redwood City, CA (Remote)<br>Sept 2026 – Nov 2026</small></p>
+              <p class="text-muted mb-3"><small>Code for the Community Inc. — Redwood City, CA (Remote)<br>Sep 2026 – Present</small></p>
             </div>
             <ul class="text-muted text-left pl-4 mb-0">
-              <li class="mb-2">Selected from a competitive pool for a 10-week software engineering cohort building a production application for a nonprofit partner</li>
-              <li>Collaborating with a cross-functional team and mentor in weekly Agile sprints to design, build, and ship the product</li>
+              <li class="mb-2">Designed a PostgreSQL schema for Sadagaat, a Sudanese humanitarian charity, isolating 7 funding states so monthly spreadsheet re-imports never erase an office's claim</li>
+              <li>Built 6 React/TypeScript screens with role-based access for the charity's 4 offices, reviewing and testing every AI-assisted change</li>
             </ul>
           </div>
         </div>
@@ -167,7 +189,7 @@
             </div>
             <ul class="text-muted text-left pl-4 mb-0">
               <li class="mb-2">Cut data mismatches 15% by building 13 REST endpoints in Java/Spring Boot syncing account data across services</li>
-              <li>Reduced deployment time 19% by automating build and testing stages of the CI/CD pipeline across 3+ Agile Sprints</li>
+              <li>Reduced deployment time 19% by automating build and testing stages of the CI/CD pipeline across 3+ Agile sprints</li>
             </ul>
           </div>
         </div>
@@ -177,7 +199,7 @@
             <div class="text-center">
               <i class="fas fa-flask project-icon"></i>
               <h5 class="card-title mt-3 mb-1">Undergraduate Research Assistant</h5>
-              <p class="text-muted mb-3"><small>DePauw University — Greencastle, IN<br>Jan 2026 – April 2026</small></p>
+              <p class="text-muted mb-3"><small>DePauw University — Greencastle, IN<br>Jan 2026 – Apr 2026</small></p>
             </div>
             <ul class="text-muted text-left pl-4 mb-0">
               <li class="mb-2">Achieved 0.85 ROC-AUC predicting customer churn across 7,043 records via ML pipeline with stratified 5-fold CV</li>
@@ -209,7 +231,18 @@
 <section class="projects-section bg-light" id="projects">
   <div class="container">
     <h2 class="text-uppercase text-center mb-5">Portfolio</h2>
-    <div class="row">
+    <div class="row justify-content-center">
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 text-center project-card">
+          <div class="card-body d-flex flex-column">
+            <i class="fas fa-shield-alt project-icon"></i>
+            <h5 class="card-title mt-3">Open Policy Agent Java SDK</h5>
+            <p class="card-text text-muted flex-grow-1">Open-source contributions to Open Policy Agent's Java SDK: a JWT verification primitive and AWS SigV4 request signing, validated across 18 signing scenarios.</p>
+            <a href="https://github.com/ume3445/java-opa-sdk" class="btn btn-primary mt-auto" target="_blank">View Project</a>
+          </div>
+        </div>
+      </div>
 
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="card h-100 text-center project-card">
@@ -238,7 +271,7 @@
           <div class="card-body d-flex flex-column">
             <i class="fas fa-globe project-icon"></i>
             <h5 class="card-title mt-3">MindFirst</h5>
-            <p class="card-text text-muted flex-grow-1">Chrome extension and macOS menu bar app that classifies AI prompts, tracks usage, and includes an AI literacy quiz. Built with the Anthropic API.</p>
+            <p class="card-text text-muted flex-grow-1">Chrome extension and macOS menu bar app that classifies AI prompts, tracks usage, and includes an AI literacy quiz. Built with the Anthropic API and live on the Chrome Web Store.</p>
             <a href="https://mindfirst.netlify.app" class="btn btn-primary mt-auto" target="_blank">View Project</a>
           </div>
         </div>
@@ -298,7 +331,7 @@
             <input class="formelements" type="text" name="name" placeholder="Name" required>
             <input class="formelements" type="email" name="email" placeholder="Email" required>
             <textarea class="formelements" name="message" placeholder="Your message..." required></textarea>
-            <input class="btn" type="submit" value="Send">
+            <input class="btn" id="submit" type="submit" value="Send">
           </form>
         </div>
       </div>
