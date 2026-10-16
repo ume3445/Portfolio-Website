@@ -8,6 +8,12 @@ I bought the domain through Squarespace Domains, but the site itself is hosted o
 
 You can visit it at [www.umerhammad.com](https://www.umerhammad.com).
 
+<p align="center">
+  <img src="docs/desktop.jpg" alt="Portfolio landing page on desktop" width="640">
+  &nbsp;
+  <img src="docs/mobile.jpg" alt="Portfolio landing page on a phone" width="190">
+</p>
+
 ## About the Site
 
 The site has a responsive layout that works on mobile. The contact form is powered by [Formspree](https://formspree.io). I built the pages with HTML5, CSS3, and Bootstrap, added some JavaScript for interactivity, and deploy everything through GitHub Pages.
