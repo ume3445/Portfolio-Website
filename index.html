@@ -24,6 +24,7 @@
   <!-- Core theme CSS -->
   <link href="css/styles.css" rel="stylesheet" />
   <link href="css/h-animatedcards.css" rel="stylesheet" />
+  <link href="css/demos.css" rel="stylesheet" />
 
   <style>
     .about-section {
@@ -110,6 +111,7 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#demos">In Action</a></li>
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Portfolio</a></li>
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
       </ul>
@@ -227,6 +229,134 @@
   </div>
 </section>
 
+<!-- In action -->
+<section class="demos-section" id="demos">
+  <div class="container">
+    <h2 class="text-uppercase text-center mb-3">In Action</h2>
+    <p class="demos-intro text-center">What my projects actually do, without the jargon. Every number here comes from a real run.</p>
+
+    <div class="demo-tabs" role="tablist" aria-label="Projects">
+      <button class="demo-tab" role="tab" id="tab-mindfirst" aria-controls="panel-mindfirst" aria-selected="true">MindFirst</button>
+      <button class="demo-tab" role="tab" id="tab-cache" aria-controls="panel-cache" aria-selected="false" tabindex="-1">shardcache</button>
+      <button class="demo-tab" role="tab" id="tab-rag" aria-controls="panel-rag" aria-selected="false" tabindex="-1">RetrieveAI</button>
+      <button class="demo-tab" role="tab" id="tab-opa" aria-controls="panel-opa" aria-selected="false" tabindex="-1">Open Policy Agent</button>
+      <button class="demo-tab" role="tab" id="tab-churn" aria-controls="panel-churn" aria-selected="false" tabindex="-1">Churn Prediction</button>
+    </div>
+
+    <!-- MindFirst -->
+    <div class="demo-panel is-active" role="tabpanel" id="panel-mindfirst" aria-labelledby="tab-mindfirst">
+      <div class="demo-stage">
+        <img src="assets/demos/mindfirst-extension.gif" loading="lazy" width="1100" height="640"
+             alt="A user asks a chatbot to write code; MindFirst stops the request and asks for the user's own attempt first. A simple factual question goes straight through.">
+      </div>
+      <div class="demo-copy">
+        <h3>Think first, then ask</h3>
+        <p>A Chrome extension for people who want to use AI without letting it do all their thinking. When you ask ChatGPT or Claude to write, solve or analyze something, it pauses and asks you to take a shot yourself first. Quick factual questions go straight through.</p>
+        <p>It also tracks how often you tried first, and the website has a quiz that shows you an AI answer and asks what is wrong with it.</p>
+        <p class="demo-note">Recorded with the real extension on a stand-in chat page, since the real sites need a login.</p>
+        <a class="demo-link" href="https://mindfirst.netlify.app" target="_blank" rel="noopener">Try the quiz &rarr;</a>
+      </div>
+    </div>
+
+    <!-- shardcache -->
+    <div class="demo-panel" role="tabpanel" id="panel-cache" aria-labelledby="tab-cache" hidden>
+      <div class="demo-stage">
+        <div class="lane-label"><span><b>One lock:</b> everyone waits for the same door</span></div>
+        <canvas class="lane-canvas" id="lane-locked" aria-hidden="true"></canvas>
+        <div class="lane-label mt-2"><span><b>Sharded:</b> 64 doors, so almost nobody waits</span></div>
+        <canvas class="lane-canvas" id="lane-sharded" aria-hidden="true"></canvas>
+        <div class="race" aria-label="Time to finish 10 million operations">
+          <div class="lane-label"><span>Time to finish 10 million operations, in real time</span></div>
+          <div class="race-row"><span>One lock</span><div class="race-track"><div class="race-fill" id="race-locked"></div></div><span class="race-time" id="race-locked-t">6.0s</span></div>
+          <div class="race-row"><span>Sharded</span><div class="race-track"><div class="race-fill fast" id="race-sharded"></div></div><span class="race-time" id="race-sharded-t">1.1s</span></div>
+          <button class="race-btn" id="race-again" type="button">Run it again</button>
+        </div>
+      </div>
+      <div class="demo-copy">
+        <h3>A cache that doesn't make you wait in line</h3>
+        <p>Apps keep popular data in a cache so they don't have to fetch it every time. When many parts of a program use the same cache at once, the simple design puts one lock on it, so everyone queues for one door.</p>
+        <p>I wrote one in C++ that splits the cache into 64 independent pieces, each with its own lock. Eight workers almost never collide, so they all get through at once.</p>
+        <div class="demo-stat"><strong>5.3x faster</strong><span>8.80 million vs 1.67 million operations per second, 8 workers, on my MacBook Air</span></div>
+        <a class="demo-link" href="https://github.com/ume3445/shardcache" target="_blank" rel="noopener">See the code &rarr;</a>
+      </div>
+    </div>
+
+    <!-- RetrieveAI -->
+    <div class="demo-panel" role="tabpanel" id="panel-rag" aria-labelledby="tab-rag" hidden>
+      <div class="demo-stage">
+        <div class="chat" id="rag-chat">
+          <div class="bubble q" id="rag-q"></div>
+          <div class="bubble a thinking hidden" id="rag-think">Reading the paper&hellip;</div>
+          <div class="bubble a hidden" id="rag-a">The base model uses 8 attention heads.</div>
+          <div class="source-card hidden" id="rag-src">
+            <div class="src-title">Source &middot; page 5</div>
+            &ldquo;we employ <mark>h = 8 parallel attention layers, or heads</mark>.&rdquo;
+          </div>
+        </div>
+        <div class="dotgrid" id="rag-dots" aria-hidden="true"></div>
+        <div class="dotgrid-caption">100 test questions. Green: the right passage was in its top 5 picks.</div>
+      </div>
+      <div class="demo-copy">
+        <h3>Ask a research paper a question</h3>
+        <p>Give it a stack of PDFs and ask a question in plain English. It finds the passages that answer it, writes the answer, and shows you exactly where on which page it came from, so you can check it instead of trusting it.</p>
+        <p>The question here is a real one, asked of <em>Attention Is All You Need</em>, the paper behind modern AI chatbots.</p>
+        <div class="demo-stat"><strong>93 / 100</strong><span>test questions over 5 papers where it found the right passage in its top 5</span></div>
+        <a class="demo-link" href="https://github.com/ume3445/RetrieveAI" target="_blank" rel="noopener">See the code &rarr;</a>
+      </div>
+    </div>
+
+    <!-- OPA -->
+    <div class="demo-panel" role="tabpanel" id="panel-opa" aria-labelledby="tab-opa" hidden>
+      <div class="demo-stage">
+        <div class="flatten-demo" id="flatten">
+          <div class="flatten-label">Input: a list with lists inside it</div>
+          <div class="flatten-row">
+            <span class="group outer"><span class="chip">1</span><span class="chip">2</span></span>
+            <span class="chip">"string"</span>
+            <span class="group outer"><span class="chip">3</span><span class="chip">{"a": "b"}</span></span>
+            <span class="chip">4.5</span>
+            <span class="group outer"><span class="chip">6</span><span class="group inner"><span class="chip">7</span><span class="chip">8</span></span></span>
+          </div>
+          <div class="flatten-arrow" aria-hidden="true">&darr; array.flatten</div>
+          <div class="flatten-label" id="flatten-out-label">Output: one level unpacked, deeper lists left alone</div>
+        </div>
+        <ul class="merged-list">
+          <li><span class="pill">MERGED</span><span><b>array.flatten</b>: unpacks a list of lists, as above</span></li>
+          <li><span class="pill">MERGED</span><span><b>io.jwt.verify_eddsa</b>: checks the digital signature on a login token</span></li>
+          <li><span class="pill">MERGED</span><span><b>providers.aws.sign_req</b>: signs a web request so Amazon Web Services will accept it</span></li>
+        </ul>
+      </div>
+      <div class="demo-copy">
+        <h3>Building blocks for a rules engine</h3>
+        <p>Open Policy Agent is an open-source rules engine that companies use to decide who is allowed to do what, like &ldquo;only managers can approve refunds.&rdquo; Its rules language comes with built-in functions, and the Java version was missing some.</p>
+        <p>I wrote three of them. Each one has to give exactly the same answer as the original Go version, down to the byte, and the maintainers merged all three.</p>
+        <div class="demo-stat"><strong>3 merged</strong><span>pull requests into open-policy-agent/java-opa-sdk</span></div>
+        <a class="demo-link" href="https://github.com/ume3445/open-source-contributions" target="_blank" rel="noopener">See the contributions &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Churn -->
+    <div class="demo-panel" role="tabpanel" id="panel-churn" aria-labelledby="tab-churn" hidden>
+      <div class="demo-stage">
+        <svg class="churn-svg" id="churn-svg" viewBox="0 0 520 300" role="img"
+             aria-label="Share of customers still subscribed over six years. Month-to-month customers fall to about 30 percent by year five; two-year contract customers stay near 98 percent."></svg>
+        <div class="churn-legend">
+          <span style="color:#d9822b">Month-to-month</span>
+          <span style="color:#729C5E">Two-year contract</span>
+        </div>
+      </div>
+      <div class="demo-copy">
+        <h3>Who is about to leave, and why</h3>
+        <p>Using records for 7,043 customers of a phone and internet company (a public IBM dataset), I built a model that predicts who is likely to cancel and explains which factors push them there.</p>
+        <p>The clearest signal is the contract. After five years, only about 3 in 10 month-to-month customers are still around. On two-year contracts, almost everyone is.</p>
+        <div class="demo-stat"><strong>$242k</strong><span>in revenue flagged as at risk, with the reasons behind each prediction</span></div>
+        <p class="demo-note">Curves traced from the survival chart in the project.</p>
+        <a class="demo-link" href="https://github.com/ume3445/telecom-churn-prediction" target="_blank" rel="noopener">See the analysis &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Projects -->
 <section class="projects-section bg-light" id="projects">
   <div class="container">
@@ -238,8 +368,8 @@
           <div class="card-body d-flex flex-column">
             <i class="fas fa-shield-alt project-icon"></i>
             <h5 class="card-title mt-3">Open Policy Agent Java SDK</h5>
-            <p class="card-text text-muted flex-grow-1">Open-source contributions to Open Policy Agent's Java SDK: a JWT verification primitive and AWS SigV4 request signing, validated across 18 signing scenarios.</p>
-            <a href="https://github.com/ume3445/java-opa-sdk" class="btn btn-primary mt-auto" target="_blank">View Project</a>
+            <p class="card-text text-muted flex-grow-1">Three builtins merged into Open Policy Agent's Java SDK: array flattening, Ed25519 JWT verification, and AWS SigV4 request signing.</p>
+            <a href="https://github.com/ume3445/open-source-contributions" class="btn btn-primary mt-auto" target="_blank">View Project</a>
           </div>
         </div>
       </div>
@@ -359,6 +489,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="js/scripts.js"></script>
+<script src="js/demos.js"></script>
 
 </body>
 </html>
